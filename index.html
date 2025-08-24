@@ -7,16 +7,18 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
-      background: #f9fafb;
+      background: linear-gradient(135deg, #bbf7d0, #86efac);
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #1a1a1a;
     }
     header {
-      background: #2563eb;
+      background: rgba(22, 163, 74, 0.8);
       color: white;
       padding: 1rem;
       text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
     header h1 {
       margin: 0;
@@ -27,15 +29,16 @@
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    .search-box {
-      margin-bottom: 1.5rem;
-    }
     .search-box input {
       width: 100%;
       padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
+      border: none;
+      border-radius: 1rem;
       font-size: 1rem;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      outline: none;
     }
     .section {
       margin-bottom: 2rem;
@@ -43,21 +46,23 @@
     .section h2 {
       font-size: 1.25rem;
       margin-bottom: 1rem;
-      color: #1e40af;
-      border-left: 4px solid #2563eb;
+      color: #065f46;
+      border-left: 4px solid #16a34a;
       padding-left: 0.5rem;
     }
     .question {
-      background: white;
-      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 1rem;
       padding: 1rem;
       margin-bottom: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: background 0.2s;
+      transition: transform 0.2s, background 0.2s;
+      backdrop-filter: blur(10px);
     }
     .question:hover {
-      background: #f3f4f6;
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.35);
     }
     .q-title {
       font-weight: 600;
@@ -69,7 +74,7 @@
       margin-top: 0.5rem;
       display: none;
       font-size: 0.95rem;
-      color: #444;
+      color: #1f2937;
     }
     .question.active .q-content {
       display: block;
@@ -122,7 +127,7 @@
       <div class="question"><div class="q-title">Retail Product Code Validation</div><div class="q-content">Validate SKU/product codes, remove duplicates, standardize product categories.</div></div>
       <div class="question"><div class="q-title">Invoice Data Cleaning</div><div class="q-content">Validate invoice numbers, check amounts, clean duplicate customer names.</div></div>
       <div class="question"><div class="q-title">Customer Loyalty Card Data Cleaning</div><div class="q-content">Validate card numbers, merge duplicate customer records, fix inconsistent points data.</div></div>
-      <div class="question"><div class="q-title">E-Commerce Order Data Cleaning</div><div class="q-content">Clean order IDs, validate pin codes, fix date-time inconsistencies (order &lt; shipping &lt; delivery).</div></div>
+      <div class="question"><div class="q-title">E-Commerce Order Data Cleaning</div><div class="q-content">Clean order IDs, validate pin codes, fix date-time inconsistencies (order < shipping < delivery).</div></div>
     </div>
 
     <div class="section">
