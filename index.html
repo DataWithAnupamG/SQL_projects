@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Cleaning & Validation Questions</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #2563eb;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .search-box {
+      margin-bottom: 1.5rem;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #1e40af;
+      border-left: 4px solid #2563eb;
+      padding-left: 0.5rem;
+    }
+    .question {
+      background: white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .question:hover {
+      background: #f3f4f6;
+    }
+    .q-title {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .q-content {
+      margin-top: 0.5rem;
+      display: none;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .question.active .q-content {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .q-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Data Cleaning & Validation Questions</h1>
+  </header>
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 Search questions...">
+    </div>
+
+    <!-- Sections -->
+    <div class="section">
+      <h2>🔹 Data Cleaning & Validation</h2>
+      <div class="question"><div class="q-title">Employee Data Cleaning & Deduplication</div><div class="q-content">Validate employee IDs, remove duplicates, fix casing of names, check missing department codes.</div></div>
+      <div class="question"><div class="q-title">Bank IFSC Code Validation Project</div><div class="q-content">Validate format of IFSC codes (AAAA0XXXXXX), remove invalid entries, map to correct banks.</div></div>
+      <div class="question"><div class="q-title">Mobile Number Standardization</div><div class="q-content">Standardize Indian mobile numbers (remove +91/0, check 10-digit format, remove invalid entries).</div></div>
+      <div class="question"><div class="q-title">Aadhaar Number Validation</div><div class="q-content">Validate 12-digit Aadhaar numbers using Verhoeff algorithm, check duplicates and missing values.</div></div>
+      <div class="question"><div class="q-title">GST Invoice Data Validation</div><div class="q-content">Clean invoice dataset, validate GSTIN format, check invoice amounts, remove incomplete rows.</div></div>
+    </div>
+
+    <div class="section">
+      <h2>🔹 Personal / Identity Data</h2>
+      <div class="question"><div class="q-title">Voter ID Data Cleaning</div><div class="q-content">Validate EPIC numbers, standardize voter names, clean missing age/gender fields.</div></div>
+      <div class="question"><div class="q-title">Driving License Data Cleaning</div><div class="q-content">Validate DL numbers (state + year + sequence), correct invalid formats, handle expired licenses.</div></div>
+      <div class="question"><div class="q-title">Passport Data Standardization</div><div class="q-content">Validate passport numbers, check for invalid characters, standardize issue/expiry dates.</div></div>
+      <div class="question"><div class="q-title">Employee Address Standardization</div><div class="q-content">Clean pin codes, remove invalid characters, standardize address format (Uppercase, Abbreviation).</div></div>
+    </div>
+
+    <div class="section">
+      <h2>🔹 Finance / Banking Data</h2>
+      <div class="question"><div class="q-title">Bank Account Number Validation</div><div class="q-content">Standardize account numbers to fixed length, remove special characters, detect duplicates.</div></div>
+      <div class="question"><div class="q-title">Cheque Transaction Data Cleaning</div><div class="q-content">Validate cheque numbers, clean beneficiary names, remove duplicate cheque entries.</div></div>
+      <div class="question"><div class="q-title">Insurance Policy Data Cleaning</div><div class="q-content">Validate policy IDs, check dates, remove expired/mismatched entries.</div></div>
+      <div class="question"><div class="q-title">Loan Application Data Cleaning</div><div class="q-content">Handle missing income details, validate PAN/GST fields, standardize applicant names.</div></div>
+    </div>
+
+    <div class="section">
+      <h2>🔹 Sales / Retail Data</h2>
+      <div class="question"><div class="q-title">Retail Product Code Validation</div><div class="q-content">Validate SKU/product codes, remove duplicates, standardize product categories.</div></div>
+      <div class="question"><div class="q-title">Invoice Data Cleaning</div><div class="q-content">Validate invoice numbers, check amounts, clean duplicate customer names.</div></div>
+      <div class="question"><div class="q-title">Customer Loyalty Card Data Cleaning</div><div class="q-content">Validate card numbers, merge duplicate customer records, fix inconsistent points data.</div></div>
+      <div class="question"><div class="q-title">E-Commerce Order Data Cleaning</div><div class="q-content">Clean order IDs, validate pin codes, fix date-time inconsistencies (order &lt; shipping &lt; delivery).</div></div>
+    </div>
+
+    <div class="section">
+      <h2>🔹 Healthcare Data</h2>
+      <div class="question"><div class="q-title">Hospital Patient Records Cleaning</div><div class="q-content">Remove duplicate patients, validate medical record IDs, clean admission/discharge dates.</div></div>
+      <div class="question"><div class="q-title">Pharmacy Prescription Data Cleaning</div><div class="q-content">Validate drug codes, standardize doctor names, remove incomplete prescriptions.</div></div>
+      <div class="question"><div class="q-title">Vaccination Data Cleaning</div><div class="q-content">Validate Aadhaar/ID numbers, check dose dates (Dose 2 after Dose 1), remove invalid entries.</div></div>
+      <div class="question"><div class="q-title">Insurance Claim Data Cleaning</div><div class="q-content">Validate claim IDs, remove duplicates, check for missing treatment details.</div></div>
+    </div>
+
+    <div class="section">
+      <h2>🔹 General Data</h2>
+      <div class="question"><div class="q-title">Email ID Cleaning</div><div class="q-content">Validate email format, remove duplicates, standardize domain names (gmail.com vs GMAIL.COM).</div></div>
+      <div class="question"><div class="q-title">Phone Number Data Cleaning</div><div class="q-content">Standardize mobile numbers to +91XXXXXXXXXX format, remove invalid numbers, check duplicates.</div></div>
+      <div class="question"><div class="q-title">Date Format Standardization</div><div class="q-content">Convert inconsistent date formats (DD/MM/YYYY vs YYYY-MM-DD) into one standard.</div></div>
+      <div class="question"><div class="q-title">Survey Response Cleaning</div><div class="q-content">Handle missing responses, normalize free-text answers, remove invalid characters.</div></div>
+    </div>
+  </div>
+
+  <script>
+    // Auto-numbering questions
+    document.querySelectorAll('.question').forEach((q, i) => {
+      const title = q.querySelector('.q-title');
+      title.innerHTML = `<span>Q${i+1}. ${title.textContent}</span>`;
+    });
+
+    // Search filter
+    document.getElementById('searchInput').addEventListener('input', function() {
+      let filter = this.value.toLowerCase();
+      document.querySelectorAll('.question').forEach(q => {
+        let text = q.textContent.toLowerCase();
+        q.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+
+    // Toggle expand/collapse
+    document.querySelectorAll('.question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
